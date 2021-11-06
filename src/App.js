@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {useDispatch, useSelector} from "react-redux";
+import {useCallback, useEffect} from "react";
+import Clicker from "./components/Clicker";
+import axiosAPI from "./functions/axiosAPI";
+import {incrementCurrentValue} from "./storeRedux/action";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const data = useSelector(state => state.repos)
+    const dispatch = useDispatch()
+
+    // useEffect(() => {
+    //     dispatch(axiosAPI())
+    // }, [dispatch])
+
+
+
+    return (
+
+        <div>
+            <Clicker data={data}/>
+
+
+        </div>
+
+    );
 }
+
 
 export default App;
