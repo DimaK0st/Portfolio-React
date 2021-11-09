@@ -6,9 +6,13 @@ import store from "./storeRedux/store";
 import {Provider} from "react-redux";
 
 ReactDOM.render(
+
+    <div className={"root"}>
     <Provider store={store}>
         <App/>
-    </Provider>,
+    </Provider>
+    </div>,
     document.getElementById('root')
+
 );
 

@@ -1,4 +1,11 @@
-import {BUY_X2, CURRENT_VALUE, DECREMENT_CURRENT_VALUE, INCREMENT_CURRENT_VALUE} from "./actionType";
+import {
+    BUY_X2,
+    CURRENT_VALUE,
+    DECREMENT_CURRENT_VALUE,
+    INCREMENT_CURRENT_VALUE,
+    UPDATE_PER_CLICK,
+    UPDATE_PER_SECONDS, UPDATE_PER_SECONDS_VALUE
+} from "./actionType";
 
 export function actionAddInfoUser(data){
     console.log(data)
@@ -20,8 +27,20 @@ export function decrementCurrentValue(){
     }
 }
 
-export function buyX2(){
+export function updatePerClick(){
     return{
-        type:BUY_X2,
+        type:UPDATE_PER_CLICK,
+    }
+}
+
+export function updatePerSeconds(id){
+    return{
+        type:UPDATE_PER_SECONDS,
+        id: id,
+    }
+}
+export function updatePerSecondsValue(){
+    return{
+        type:UPDATE_PER_SECONDS_VALUE
     }
 }
