@@ -4,6 +4,7 @@
 - react-router-dom
 - axios
 - react hooks
+- redux-persist(Для хранения редакса в локалсторе)
 
 ## Run project
 

@@ -1,13 +1,12 @@
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
-import {useCallback, useEffect} from "react";
-import Clicker from "./components/clicker/MainClicker";
-import axiosAPI from "./functions/axiosAPI";
-import {incrementCurrentValue} from "./storeRedux/action";
+import { persistStore, autoRehydrate } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'
 import {BrowserRouter} from "react-router-dom"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AppRouter from "./components/AppRouter";
+import React from "react";
 
 function App() {
     const data = useSelector(state => state.repos)

@@ -13,10 +13,23 @@ import RowElementShopBuyClick from "./RowElementShopBuyClick";
 
 function MainClicker(props) {
     const dispatch = useDispatch()
-
+    let clicked= true
 
     const increment = useCallback(() => {
-        dispatch(incrementCurrentValue())
+        console.log("ZaIf")
+            console.log("clicked")
+
+        clicked=false
+        if(clicked==true){
+        const tim = window.setInterval(() => {
+
+                document.getElementById('incClick').classList.add('disabled');
+            console.log("Dispatch")
+            dispatch(incrementCurrentValue())
+            document.getElementById('incClick').classList.remove('disabled');
+            clicked=true
+        }, 100);}
+
     }, [])
 
     const Decrement = useCallback(() => {
@@ -47,9 +60,9 @@ function MainClicker(props) {
     )
 
 
-    console.log(props.data)
+    // console.log(props.data)
     return (
-        <div className={"mainClicker"} onSelect={"return false"} onMouseDown={"return false"} style={{userSelect: "none"}}>
+        <div className={"mainClicker"} onSelect={"return false"} style={{userSelect: "none"}}>
 
 
             <span>{props.data.value.toFixed(1)}</span>
@@ -61,13 +74,13 @@ function MainClicker(props) {
             <br/>
 
 
-            <div style={{
+            <div id={"incClick"} style={{
                 background: "#f5bc8b",
                 border: "2px solid",
                 borderRadius: "25px",
                 padding: "10px",
                 margin: "0 0 10px 0",
-                cursor:"pointer"
+                cursor:"pointer",
             }} onClick={() => increment()}>
                 <div style={{textAlign: "center"}}>
                     <span style={{margin: "auto"}}>Добывать</span>

@@ -1,7 +1,7 @@
 let defaultState;
 export default defaultState = {
     click: 1,
-    perSecond: 1,
+    perSecond: 0,
     stageClick: 0,
     costUpdateClick: 50,
     value: 0,

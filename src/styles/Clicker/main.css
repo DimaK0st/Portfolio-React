@@ -5,3 +5,19 @@
     background: #e2e2e2;
     padding: 20px;
 }
+
+.disabled{
+    pointer-events: none
+}
+@media (max-width: 900px) {
+
+
+    .mainClicker{
+        font-size: 20px;
+        width: calc(100% - 10px);
+        margin: 0 ;
+        background: #e2e2e2;
+        padding: 5px;
+    }
+
+}
