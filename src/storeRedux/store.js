@@ -3,7 +3,7 @@ import {createStore, applyMiddleware} from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import reducer from "./reducer";
-import {persistStore, autoRehydrate, persistReducer} from 'redux-persist';
+import {persistStore, persistReducer} from 'redux-persist';
 import storage from 'redux-persist/lib/storage'
 
 const rootReducer = combineReducers({

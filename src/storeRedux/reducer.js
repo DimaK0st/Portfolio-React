@@ -1,5 +1,4 @@
 import {
-    DECREMENT_CURRENT_VALUE,
     INCREMENT_CURRENT_VALUE,
     UPDATE_PER_CLICK,
     UPDATE_PER_SECONDS,
@@ -17,12 +16,6 @@ export default function reducer(state = defaultState, action) {
                 ...state,
                 value: state.value + state.click
             };
-        case DECREMENT_CURRENT_VALUE:
-            return {
-                ...state,
-                value: state.value - state.click
-            };
-
 
         case UPDATE_PER_SECONDS:
             const currentVideoCart = state.videoCardsList[action.id]
@@ -42,7 +35,6 @@ export default function reducer(state = defaultState, action) {
                         } : videoCard
                     )
                 };
-
 
         case UPDATE_PER_CLICK:
             const priseSeconds = getPricePerClick(state.stageClick)

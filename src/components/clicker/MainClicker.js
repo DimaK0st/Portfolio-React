@@ -1,7 +1,6 @@
 import React, {useCallback, useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {
-    decrementCurrentValue,
     incrementCurrentValue,
     updatePerClick,
     updatePerSeconds,
@@ -11,52 +10,50 @@ import RowElementShopVideoCard from "./RowElementShopVideoCard";
 import '../../styles/Clicker/main.css';
 import RowElementShopBuyClick from "./RowElementShopBuyClick";
 
+let clicked = true
+
 function MainClicker(props) {
     const dispatch = useDispatch()
-    let clicked= true
 
     const increment = useCallback(() => {
         console.log("ZaIf")
-            console.log("clicked")
+        console.log("clicked")
 
-        clicked=false
-        if(clicked==true){
-        const tim = window.setInterval(() => {
+        clicked = false
+        if (clicked === true) {
+            window.setInterval(() => {
 
                 document.getElementById('incClick').classList.add('disabled');
-            console.log("Dispatch")
-            dispatch(incrementCurrentValue())
-            document.getElementById('incClick').classList.remove('disabled');
-            clicked=true
-        }, 100);}
+                console.log("Dispatch")
+                dispatch(incrementCurrentValue())
+                document.getElementById('incClick').classList.remove('disabled');
+                clicked = true
+            }, 100);
+        }
 
-    }, [])
-
-    const Decrement = useCallback(() => {
-        dispatch(decrementCurrentValue())
-    }, [])
+    }, [dispatch])
 
     const updateClick = useCallback(() => {
         dispatch(updatePerClick())
-    }, [])
+    }, [dispatch])
 
     const updateSeconds = useCallback((id) => {
         dispatch(updatePerSeconds(id))
-    }, [])
+    }, [dispatch])
 
 
     const updateSecondsValue = useCallback(() => {
         dispatch(updatePerSecondsValue())
-    }, [])
+    }, [dispatch])
 
 
     useEffect(
         () => {
-            const timer = window.setInterval(() => {
+            window.setInterval(() => {
                 updateSecondsValue()
             }, 100);
         },
-        []
+        [updateSecondsValue]
     )
 
 
@@ -65,34 +62,33 @@ function MainClicker(props) {
         <div className={"mainClicker"} onSelect={"return false"} style={{userSelect: "none"}}>
 
 
-            <span>{props.data.value.toFixed(1)}</span>
+            <span key={"value"}>{props.data.value.toFixed(1)}</span>
             <br/>
             <br/>
-            <span>За клик: {props.data.click.toFixed(1)}</span>
+            <span key={"click"}>За клик: {props.data.click.toFixed(1)}</span>
             <br/>
-            <span>В секунду: {props.data.perSecond.toFixed(1)}</span>
+            <span key={"perSec"}>В секунду: {props.data.perSecond.toFixed(1)}</span>
             <br/>
 
 
-            <div id={"incClick"} style={{
+            <div key={"incClick"} id={"incClick"} style={{
                 background: "#f5bc8b",
                 border: "2px solid",
                 borderRadius: "25px",
                 padding: "10px",
                 margin: "0 0 10px 0",
-                cursor:"pointer",
+                cursor: "pointer",
             }} onClick={() => increment()}>
                 <div style={{textAlign: "center"}}>
-                    <span style={{margin: "auto"}}>Добывать</span>
+                    <span key={"tap"} style={{margin: "auto"}}>Добывать</span>
                 </div>
             </div>
 
-            <div>
+            <div key={"shopBuyClick"}>
                 <RowElementShopBuyClick updateClick={updateClick} data={props.data}/>
             </div>
-
-
-            <div>
+            
+            <div key={"shopVideoCard"}>
                 {props.data.videoCardsList.map((videoCard) => {
                     return <RowElementShopVideoCard updateSeconds={updateSeconds} videoCard={videoCard}/>
                 })}

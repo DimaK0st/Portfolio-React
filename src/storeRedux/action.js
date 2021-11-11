@@ -1,7 +1,5 @@
 import {
-    BUY_X2,
     CURRENT_VALUE,
-    DECREMENT_CURRENT_VALUE,
     INCREMENT_CURRENT_VALUE,
     UPDATE_PER_CLICK,
     UPDATE_PER_SECONDS, UPDATE_PER_SECONDS_VALUE
@@ -18,12 +16,6 @@ export function actionAddInfoUser(data){
 export function incrementCurrentValue(){
     return{
         type:INCREMENT_CURRENT_VALUE,
-    }
-}
-
-export function decrementCurrentValue(){
-    return{
-        type:DECREMENT_CURRENT_VALUE,
     }
 }
 

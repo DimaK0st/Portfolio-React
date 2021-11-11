@@ -1,7 +1,5 @@
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
-import { persistStore, autoRehydrate } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'
 import {BrowserRouter} from "react-router-dom"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
