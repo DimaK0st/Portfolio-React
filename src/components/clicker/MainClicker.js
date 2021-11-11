@@ -9,48 +9,47 @@ import {
 } from "../../storeRedux/action";
 import RowElementShopVideoCard from "./RowElementShopVideoCard";
 import '../../styles/Clicker/main.css';
+import RowElementShopBuyClick from "./RowElementShopBuyClick";
 
-function User(props) {
+function MainClicker(props) {
     const dispatch = useDispatch()
 
 
     const increment = useCallback(() => {
         dispatch(incrementCurrentValue())
-    },[])
+    }, [])
 
     const Decrement = useCallback(() => {
         dispatch(decrementCurrentValue())
-    },[])
+    }, [])
 
     const updateClick = useCallback(() => {
         dispatch(updatePerClick())
-    },[])
+    }, [])
 
     const updateSeconds = useCallback((id) => {
         dispatch(updatePerSeconds(id))
-    },[])
-
+    }, [])
 
 
     const updateSecondsValue = useCallback(() => {
         dispatch(updatePerSecondsValue())
-    },[])
+    }, [])
 
 
     useEffect(
         () => {
-            const timer = window.setInterval(() => {updateSecondsValue()}, 100);
+            const timer = window.setInterval(() => {
+                updateSecondsValue()
+            }, 100);
         },
         []
     )
 
 
-
-
     console.log(props.data)
-    return(
-        <div className={"mainClicker"}>
-
+    return (
+        <div className={"mainClicker"} onSelect={"return false"} onMouseDown={"return false"} style={{userSelect: "none"}}>
 
 
             <span>{props.data.value.toFixed(1)}</span>
@@ -61,17 +60,30 @@ function User(props) {
             <span>В секунду: {props.data.perSecond.toFixed(1)}</span>
             <br/>
 
-            <button onClick={()=>increment()}>Increment</button>
-            <br/>
-            <br/>
-            <br/>
-            <button onClick={()=>updateClick()}>Взять напарника (+1 клик): {props.data.costUpdateClick.toFixed(1)}</button>
-            <br/>
 
-            {props.data.videoCardsList.map((videoCard)=>{
-                return <RowElementShopVideoCard updateSeconds={updateSeconds} videoCard={videoCard}/>
-            })}
+            <div style={{
+                background: "#f5bc8b",
+                border: "2px solid",
+                borderRadius: "25px",
+                padding: "10px",
+                margin: "0 0 10px 0",
+                cursor:"pointer"
+            }} onClick={() => increment()}>
+                <div style={{textAlign: "center"}}>
+                    <span style={{margin: "auto"}}>Добывать</span>
+                </div>
+            </div>
 
+            <div>
+                <RowElementShopBuyClick updateClick={updateClick} data={props.data}/>
+            </div>
+
+
+            <div>
+                {props.data.videoCardsList.map((videoCard) => {
+                    return <RowElementShopVideoCard updateSeconds={updateSeconds} videoCard={videoCard}/>
+                })}
+            </div>
         </div>
 
     )
@@ -79,4 +91,4 @@ function User(props) {
 }
 
 
-export default User;
+export default MainClicker;

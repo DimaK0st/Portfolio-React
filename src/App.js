@@ -4,6 +4,10 @@ import {useCallback, useEffect} from "react";
 import Clicker from "./components/clicker/MainClicker";
 import axiosAPI from "./functions/axiosAPI";
 import {incrementCurrentValue} from "./storeRedux/action";
+import {BrowserRouter} from "react-router-dom"
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import AppRouter from "./components/AppRouter";
 
 function App() {
     const data = useSelector(state => state.repos)
@@ -14,14 +18,17 @@ function App() {
     // }, [dispatch])
 
 
-
     return (
 
-        <div>
-            <Clicker data={data}/>
+        <BrowserRouter>
 
+            <Header/>
 
-        </div>
+            <AppRouter data={data}/>
+
+            <Footer/>
+
+        </BrowserRouter>
 
     );
 }
