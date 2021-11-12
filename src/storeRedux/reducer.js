@@ -37,6 +37,7 @@ export default function reducer(state = defaultState, action) {
                 };
 
         case UPDATE_PER_CLICK:
+            alert("state.value")
             const priseSeconds = getPricePerClick(state.stageClick)
             const priseNextSeconds = getPricePerClick(state.stageClick + 1)
             if (state.value >= priseSeconds)

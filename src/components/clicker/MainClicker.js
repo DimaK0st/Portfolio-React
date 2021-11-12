@@ -16,21 +16,7 @@ function MainClicker(props) {
     const dispatch = useDispatch()
 
     const increment = useCallback(() => {
-        console.log("ZaIf")
-        console.log("clicked")
-
-        clicked = false
-        if (clicked === true) {
-            window.setInterval(() => {
-
-                document.getElementById('incClick').classList.add('disabled');
-                console.log("Dispatch")
-                dispatch(incrementCurrentValue())
-                document.getElementById('incClick').classList.remove('disabled');
-                clicked = true
-            }, 100);
-        }
-
+            dispatch(incrementCurrentValue())
     }, [dispatch])
 
     const updateClick = useCallback(() => {
@@ -87,7 +73,7 @@ function MainClicker(props) {
             <div key={"shopBuyClick"}>
                 <RowElementShopBuyClick updateClick={updateClick} data={props.data}/>
             </div>
-            
+
             <div key={"shopVideoCard"}>
                 {props.data.videoCardsList.map((videoCard) => {
                     return <RowElementShopVideoCard updateSeconds={updateSeconds} videoCard={videoCard}/>
