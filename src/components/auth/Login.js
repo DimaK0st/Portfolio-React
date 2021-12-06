@@ -1,11 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Box, Button, Container, Grid} from "@material-ui/core";
 import firebase from "firebase/compat";
 import {useDispatch} from "react-redux";
-import {setUser} from "../../storeRedux/action";
+import {innitFirebase, setUser} from "../../storeRedux/action";
 
 function Login(props) {
     const dispatch= useDispatch()
+    console.log("props", props)
+
+    let userAuth = false
+    const auth = firebase.auth()
+    const fireStore = firebase.firestore()
+    const memoizeInnitFirebase= ()=>{
+        dispatch(innitFirebase({auth,fireStore}))
+    }
+
+
+    useEffect(( )=>{
+        memoizeInnitFirebase()
+    },[auth])
+
 
     const login = async ()=> {
         console.log(props.data.loginRepos)

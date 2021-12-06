@@ -31,8 +31,6 @@ export default function loginReducer(state = defaultState, action) {
             };
 
         case LOGOUT:
-            alert("asdjhasdfhgasdfjgasfjhgsadfjhgasdfkjhasgdfkjhasdgfhdagfkasdjhfgsadhfaskjdfgasdgfasjd")
-            alert(JSON.stringify(state))
             return {
                 firebase: null,
                 auth: null,
