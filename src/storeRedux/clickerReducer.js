@@ -8,7 +8,8 @@ import defaultState from "./defaultState";
 
 
 
-export default function reducer(state = defaultState, action) {
+export default function clickerReducer(state = defaultState, action) {
+   // console.log("state",state)
     switch (action.type) {
 
         case INCREMENT_CURRENT_VALUE:
@@ -37,7 +38,6 @@ export default function reducer(state = defaultState, action) {
                 };
 
         case UPDATE_PER_CLICK:
-            alert("state.value")
             const priseSeconds = getPricePerClick(state.stageClick)
             const priseNextSeconds = getPricePerClick(state.stageClick + 1)
             if (state.value >= priseSeconds)
