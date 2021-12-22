@@ -10,12 +10,12 @@ import persistor from "../src/storeRedux/store";
 
 ReactDOM.render(
     <div className={"root"}>
-        <Provider store={store}>
-            <App/>
-            <PersistGate persistor={persistor}>
 
-            </PersistGate>
-        </Provider>
+            <Provider store={store}>
+                <App/>
+                <PersistGate persistor={persistor}>
+                </PersistGate>
+            </Provider>
     </div>,
     document.getElementById('root')
 );

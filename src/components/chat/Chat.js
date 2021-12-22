@@ -1,8 +1,13 @@
 import React from 'react';
+import {Button, Grid, Toolbar} from "@material-ui/core";
 
 function Chat(props) {
     return (
-        <div>Chat</div>
+        <Toolbar>
+            <Grid container justify={'flex-end'}>
+                <Button>K</Button>
+            </Grid>
+        </Toolbar>
     );
 }
 
