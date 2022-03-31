@@ -1,11 +1,10 @@
 # Что было исполльзовано в проекте:
 
 - redux
-- react-router-dom
-- axios
+- react-router-dom(был удалён)
+- axios(был удалён)
 - react hooks
 - redux-persist(Для хранения редакса в локалсторе)
-- material ui
 ## Run project
 
 ### `npm start`

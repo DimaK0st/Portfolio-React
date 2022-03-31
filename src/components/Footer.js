@@ -1,8 +1,11 @@
 import React from 'react';
+import '../styles/Clicker/footer.css';
 
 function Footer(props) {
     return (
-        <div>Footer</div>
+        <footer>
+            <span>Конец игры - кликер</span>
+        </footer>
     );
 }
 

@@ -8,9 +8,7 @@ import storage from 'redux-persist/lib/storage'
 
 const rootReducer = combineReducers({
     repos: reducer,
-
 })
-
 
 const storageConfig={
     key:'root',

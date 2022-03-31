@@ -7,7 +7,6 @@ import {
 import defaultState from "./defaultState";
 
 
-
 export default function reducer(state = defaultState, action) {
     switch (action.type) {
 
@@ -19,7 +18,6 @@ export default function reducer(state = defaultState, action) {
 
         case UPDATE_PER_SECONDS:
             const currentVideoCart = state.videoCardsList[action.id]
-
             const priseSecond = getPricePerSecond(currentVideoCart.cost, currentVideoCart.count)
             const priseNextSecond = getPricePerSecond(priseSecond, currentVideoCart.count + 1)
             if (state.value >= priseSecond)
@@ -37,7 +35,6 @@ export default function reducer(state = defaultState, action) {
                 };
 
         case UPDATE_PER_CLICK:
-            alert("state.value")
             const priseSeconds = getPricePerClick(state.stageClick)
             const priseNextSeconds = getPricePerClick(state.stageClick + 1)
             if (state.value >= priseSeconds)
@@ -52,10 +49,8 @@ export default function reducer(state = defaultState, action) {
         case UPDATE_PER_SECONDS_VALUE:
             return {
                 ...state,
-                value: state.value + (state.perSecond/10),
+                value: state.value + (state.perSecond / 10),
             };
-
-
 
         default:
             return state;
@@ -64,14 +59,10 @@ export default function reducer(state = defaultState, action) {
 
 
 function getPricePerSecond(cost, stage) {
-
     return (cost * Math.pow(1.07, stage))
-
 }
 
 function getPricePerClick(stage) {
-
     return (50 * Math.pow(1.07, stage))
-
 }
 

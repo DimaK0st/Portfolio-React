@@ -1,0 +1,14 @@
+footer {
+    display: flex;
+    height: 50px;
+    background: #1976d2;
+    width: 100%;
+    text-align: center;
+}
+
+footer span {
+    margin: auto;
+    font-size: 30px;
+    color: white;
+    font-family: "Сomic Sans MS", cursive;
+}

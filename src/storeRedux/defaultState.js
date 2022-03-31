@@ -6,7 +6,6 @@ export default defaultState = {
     costUpdateClick: 50,
     value: 0,
 
-
     videoCardsList: [
         {
             id: 0,
@@ -97,5 +96,4 @@ export default defaultState = {
             value: 10000000,
         }
     ],
-
 }

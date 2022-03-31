@@ -42,8 +42,6 @@ function MainClicker(props) {
         [updateSecondsValue]
     )
 
-
-    // console.log(props.data)
     return (
         <div className={"mainClicker"} onSelect={"return false"} style={{userSelect: "none"}}>
 

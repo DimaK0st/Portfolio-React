@@ -6,7 +6,6 @@ import {
 } from "./actionType";
 
 export function actionAddInfoUser(data){
-    console.log(data)
     return{
         type:CURRENT_VALUE,
         data:data,

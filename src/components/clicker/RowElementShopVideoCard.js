@@ -4,7 +4,6 @@ import graphicsCard from "../../assets/img/clikcer/graphics-card.png"
 
 function RowElementShopVideoCard(props) {
 
-
     return (
         <div key={props.videoCard.id} style={{
             background: "#b5cef3",
@@ -33,8 +32,6 @@ function RowElementShopVideoCard(props) {
         </div>
 
     )
-
-
 }
 
 export default React.memo(RowElementShopVideoCard);

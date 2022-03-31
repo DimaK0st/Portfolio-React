@@ -1,31 +1,24 @@
 import './App.css';
-import {useDispatch, useSelector} from "react-redux";
-import {BrowserRouter} from "react-router-dom"
+import {useSelector} from "react-redux";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import AppRouter from "./components/AppRouter";
 import React from "react";
+import MainClicker from "./components/clicker/MainClicker";
 
 function App() {
     const data = useSelector(state => state.repos)
-    const dispatch = useDispatch()
-
-    // useEffect(() => {
-    //     dispatch(axiosAPI())
-    // }, [dispatch])
-
 
     return (
 
-        <BrowserRouter>
+        <div>
 
             <Header/>
 
-            <AppRouter data={data}/>
+            <MainClicker data={data}/>
 
             <Footer/>
 
-        </BrowserRouter>
+        </div>
 
     );
 }
