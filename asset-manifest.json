@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Portfolio-React/static/css/main.1b4ec8c7.chunk.css",
-    "main.js": "/Portfolio-React/static/js/main.c2abc84b.chunk.js",
-    "main.js.map": "/Portfolio-React/static/js/main.c2abc84b.chunk.js.map",
-    "runtime-main.js": "/Portfolio-React/static/js/runtime-main.d23ce0b4.js",
-    "runtime-main.js.map": "/Portfolio-React/static/js/runtime-main.d23ce0b4.js.map",
-    "static/js/2.06a92762.chunk.js": "/Portfolio-React/static/js/2.06a92762.chunk.js",
-    "static/js/2.06a92762.chunk.js.map": "/Portfolio-React/static/js/2.06a92762.chunk.js.map",
-    "index.html": "/Portfolio-React/index.html",
-    "static/css/main.1b4ec8c7.chunk.css.map": "/Portfolio-React/static/css/main.1b4ec8c7.chunk.css.map",
-    "static/js/2.06a92762.chunk.js.LICENSE.txt": "/Portfolio-React/static/js/2.06a92762.chunk.js.LICENSE.txt",
-    "static/media/graphics-card.f2b69bb5.png": "/Portfolio-React/static/media/graphics-card.f2b69bb5.png",
-    "static/media/user-icon.0f6ca8e9.png": "/Portfolio-React/static/media/user-icon.0f6ca8e9.png"
+    "main.css": "/React-Clicker/static/css/main.1b4ec8c7.chunk.css",
+    "main.js": "/React-Clicker/static/js/main.f43d4f17.chunk.js",
+    "main.js.map": "/React-Clicker/static/js/main.f43d4f17.chunk.js.map",
+    "runtime-main.js": "/React-Clicker/static/js/runtime-main.fffc29ad.js",
+    "runtime-main.js.map": "/React-Clicker/static/js/runtime-main.fffc29ad.js.map",
+    "static/js/2.06a92762.chunk.js": "/React-Clicker/static/js/2.06a92762.chunk.js",
+    "static/js/2.06a92762.chunk.js.map": "/React-Clicker/static/js/2.06a92762.chunk.js.map",
+    "index.html": "/React-Clicker/index.html",
+    "static/css/main.1b4ec8c7.chunk.css.map": "/React-Clicker/static/css/main.1b4ec8c7.chunk.css.map",
+    "static/js/2.06a92762.chunk.js.LICENSE.txt": "/React-Clicker/static/js/2.06a92762.chunk.js.LICENSE.txt",
+    "static/media/graphics-card.f2b69bb5.png": "/React-Clicker/static/media/graphics-card.f2b69bb5.png",
+    "static/media/user-icon.0f6ca8e9.png": "/React-Clicker/static/media/user-icon.0f6ca8e9.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d23ce0b4.js",
+    "static/js/runtime-main.fffc29ad.js",
     "static/js/2.06a92762.chunk.js",
     "static/css/main.1b4ec8c7.chunk.css",
-    "static/js/main.c2abc84b.chunk.js"
+    "static/js/main.f43d4f17.chunk.js"
   ]
 }
